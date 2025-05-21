@@ -88,7 +88,10 @@ target/
 # Mypy cache
 .mypy_cache/
 
-data/
+
+
 models/
+data/
 notebooks/
 local_s3/
+
