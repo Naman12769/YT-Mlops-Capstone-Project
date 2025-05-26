@@ -1,23 +1,23 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: flask-app
+  name: capstone-project-mlops
   labels:
-    app: flask-app
+    app: capstone-project-mlops
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: flask-app
+      app: capstone-project-mlops
   template:
     metadata:
       labels:
-        app: flask-app
+        app: capstone-project-mlops
     spec:
       containers:
-      - name: flask-app
+      - name: capstone-project-mlops
         # image: 020866158197.dkr.ecr.us-east-1.amazonaws.com/flask-app:latest
-        image: capstone-ml-app:latest
+        image: 339713187643.dkr.ecr.us-east-1.amazonaws.com/capstone-project-mlops:latest
         ports:
         - containerPort: 5000
         resources:
@@ -38,11 +38,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: flask-app-service
+  name: capstone-project-mlops-service
 spec:
   type: LoadBalancer
   selector:
-    app: flask-app
+    app: capstone-project-mlops
   ports:
     - name: http
       protocol: TCP
